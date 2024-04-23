@@ -34,7 +34,7 @@ spec:
       project: 'default'
       source:
         repoURL: '{{metadata.annotations.workload_repo_url}}'
-        path: '{{path}}/{{metadata.annotations.environment}}'
+        path: '{{path}}/base'
         targetRevision: '{{metadata.annotations.workload_repo_revision}}'
       destination:
         namespace: '{{path.basename}}'
