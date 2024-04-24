@@ -29,7 +29,7 @@ spec:
       project: default
       source:
         repoURL: '{{metadata.annotations.platform_repo_url}}'
-        path: '{{path}}/namespace/namespace-{{path.basename}}-applicationset.yaml'
+        path: '{{path}}/namespace'
         targetRevision: '{{metadata.annotations.platform_repo_revision}}'
       destination:
         name: '{{name}}'
