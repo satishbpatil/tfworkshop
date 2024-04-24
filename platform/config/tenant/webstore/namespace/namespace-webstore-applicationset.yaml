@@ -39,7 +39,9 @@ spec:
         helm:
           releaseName: 'webstore'
           valueFiles:
-          - './values/{{metadata.labels.environment}}-values.yaml'
+          #- './values/{{metadata.labels.environment}}-values.yaml'
+          - '../../config/tenant/webstore/namespace/values/{{metadata.labels.environment}}-values.yaml'          
+          
       destination:
         name: '{{name}}'
         
