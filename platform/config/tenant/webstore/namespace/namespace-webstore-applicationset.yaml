@@ -28,7 +28,7 @@ spec:
       labels:
         environment: '{{metadata.labels.environment}}'
         tenant: 'webstore'
-        component: '{{path.basename}}'
+        #component: '{{path.basename}}'
         workloads: 'true'
     spec:
       project: default
@@ -37,7 +37,7 @@ spec:
         path: '{{metadata.annotations.platform_repo_basepath}}charts/namespace'
         targetRevision: '{{metadata.annotations.platform_repo_revision}}'
         helm:
-          releaseName: '{{path.basename}}'
+          releaseName: 'webstore'
           valueFiles:
           - './values/{{metadata.labels.environment}}-values.yaml'
       destination:
