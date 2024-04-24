@@ -42,6 +42,7 @@ spec:
           - '../../config/tenant/webstore/namespace/values/default-values.yaml'          
           - '../../config/tenant/webstore/namespace/values/{{metadata.labels.environment}}-values.yaml'          
           #- '{{metadata.labels.environment}}-values.yaml'
+          ignoreMissingValueFiles: true
       destination:
         name: '{{name}}'
         
