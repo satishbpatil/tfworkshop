@@ -24,7 +24,7 @@ spec:
                      
   template:
     metadata:
-      name: 'webstore-{{metadata.labels.environment}}-{{path.basename}}'
+      name: 'webstore-{{metadata.labels.environment}}-webstore'
       labels:
         environment: '{{metadata.labels.environment}}'
         tenant: 'webstore'
