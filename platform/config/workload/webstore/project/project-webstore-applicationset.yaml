@@ -7,21 +7,21 @@ spec:
   syncPolicy:
     preserveResourcesOnDeletion: true
   generators:
-        - clusters:
-            selector:
-              matchLabels:
-                workload_webstore: 'true'
-            values:
-              addonChart: argocd-apps
-              addonChartVersion: '1.4.1'
-              addonChartRepository: https://argoproj.github.io/argo-helm              
-              workload: webstore
+    - clusters:
+        selector:
+          matchLabels:
+            workload_webstore: 'true'
+        values:
+          addonChart: argocd-apps
+          addonChartVersion: '1.4.1'
+          addonChartRepository: https://argoproj.github.io/argo-helm              
+          workload: webstore
   template:
     metadata:
       name: 'argoprojects-{{metadata.labels.environment}}-{{values.workload}}'
       labels:
         environment: '{{metadata.labels.environment}}'
-        team: '{{path.basename}}'
+        team: '{{values.worload}}'
     spec:
       project: default
       sources:
@@ -32,7 +32,7 @@ spec:
           repoURL: '{{values.addonChartRepository}}'
           targetRevision: '{{values.addonChartVersion}}'
           helm:
-            releaseName: 'argoprojects-{{path.basename}}'
+            releaseName: 'argoprojects-{{values.workload}}'
             valueFiles:
             - '$values/{{metadata.annotations.platform_repo_basepath}}config/workload/{{values.workload}}/project/values/{{metadata.annotations.environment}}-values.yaml'
             parameters:
