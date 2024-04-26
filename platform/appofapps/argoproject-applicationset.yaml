@@ -13,7 +13,10 @@ spec:
             selector:
               matchLabels:
                 environment: hub
-
+            values:
+              addonChart: argocd-apps
+              addonChartVersion: '1.4.1'
+              addonChartRepository: https://argoproj.github.io/argo-helm
         - git:
             repoURL: '{{metadata.annotations.platform_repo_url}}'
             revision: '{{metadata.annotations.platform_repo_revision}}'
@@ -30,8 +33,17 @@ spec:
       sources:
         - repoURL: '{{metadata.annotations.platform_repo_url}}'
           targetRevision: '{{metadata.annotations.platform_repo_revision}}'
-          path: '{{path}}/project'
-
+          ref: values
+        - chart: '{{values.addonChart}}'
+          repoURL: '{{values.addonChartRepository}}'
+          targetRevision: '{{values.addonChartVersion}}'
+          helm:
+            releaseName: 'argoprojects-{{path.basename}}'
+            valueFiles:
+            - '$values/{{metadata.annotations.platform_repo_basepath}}config/workload/{{path.basename}}/project/project-values.yaml'
+            parameters:
+              - name: "projects[0].sourceRepos[0]"
+                value: '{{metadata.annotations.workload_repo_url}}'
       destination:
         name: '{{name}}'
       syncPolicy:
