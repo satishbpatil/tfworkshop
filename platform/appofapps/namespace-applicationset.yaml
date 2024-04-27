@@ -32,7 +32,7 @@ spec:
         path: '{{path}}/namespace'
         targetRevision: '{{metadata.annotations.platform_repo_revision}}'
       destination:
-        name: 'hub-cluster'
+        name: '{{name}}'
       syncPolicy:
         automated:
           allowEmpty: true
