@@ -10,7 +10,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          environment: hub   
+          workload_webstore: 'true'   
       values:
         workload: webstore
   template:
