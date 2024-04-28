@@ -2,7 +2,7 @@ name: webstore
 labels:
   environment: hub
 namespaces:
-  carts:
+  carts1:
     labels:
       additionalLabels:
         app.kubernetes.io/created-by: eks-workshop
@@ -34,7 +34,7 @@ namespaces:
           - operator : In
             scopeName: PriorityClass
             values: ["high"]
-  catalog:
+  catalog1:
     labels:
       additionalLabels:
         app.kubernetes.io/created-by: eks-workshop
@@ -66,7 +66,7 @@ namespaces:
           - operator : In
             scopeName: PriorityClass
             values: ["high"]
-  checkout:
+  checkout1:
     labels:
       additionalLabels:
         app.kubernetes.io/created-by: eks-workshop
@@ -98,7 +98,7 @@ namespaces:
           - operator : In
             scopeName: PriorityClass
             values: ["high"]
-  orders:
+  orders1:
     labels:
       additionalLabels:
         app.kubernetes.io/created-by: eks-workshop
@@ -130,7 +130,7 @@ namespaces:
           - operator : In
             scopeName: PriorityClass
             values: ["high"]
-  rabbitmq:
+  rabbitmq1:
     labels:
       additionalLabels:
         app.kubernetes.io/created-by: eks-workshop
@@ -162,7 +162,7 @@ namespaces:
           - operator : In
             scopeName: PriorityClass
             values: ["high"]
-  assets:
+  assets1:
     labels:
       additionalLabels:
         app.kubernetes.io/created-by: eks-workshop
@@ -194,7 +194,7 @@ namespaces:
           - operator : In
             scopeName: PriorityClass
             values: ["high"]
-  ui:
+  ui1:
     labels:
       additionalLabels:
         app.kubernetes.io/created-by: eks-workshop
