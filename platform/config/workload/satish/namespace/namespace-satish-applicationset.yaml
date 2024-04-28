@@ -29,7 +29,7 @@ spec:
         helm:
           releaseName: 'webstore'
           valueFiles:
-          - '../../config/workload/$values.workload/namespace/values/default-values.yaml'          
+          - '../../config/workload/satish/namespace/values/default-values.yaml'          
       destination:
         name: '{{name}}'
       syncPolicy:
