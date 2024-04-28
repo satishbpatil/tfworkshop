@@ -21,7 +21,7 @@ spec:
         tenant: 'webstore'
         workloads: 'true'
     spec:
-      project: default
+      project: satish
       source:
         repoURL: '{{metadata.annotations.platform_repo_url}}'
         path: '{{metadata.annotations.platform_repo_basepath}}charts/namespace'
