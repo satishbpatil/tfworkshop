@@ -16,7 +16,7 @@ projects:
     name: spoke-staging
   - namespace: orders1
     name: spoke-staging
-  - namespace: rabbitmq
+  - namespace: rabbitmq1
     name: spoke-staging
   - namespace: ui1
     name: spoke-staging
