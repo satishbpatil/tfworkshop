@@ -30,8 +30,8 @@ spec:
           releaseName: 'webstore'
           ignoreMissingValueFiles: true
           valueFiles:
-          - '../../config/workload/{{$values.workload}}/namespace/values/default-values.yaml'          
-          - '../../config/workload/{{$values.workload}}/namespace/values/{{metadata.labels.environment}}-values.yaml'          
+          - '../../config/workload/$values.workload/namespace/values/default-values.yaml'          
+          - '../../config/workload/$values.workload/namespace/values/{{metadata.labels.environment}}-values.yaml'          
       destination:
         name: '{{name}}'
       syncPolicy:
